@@ -23,29 +23,20 @@ button2.addEventListener('click', function() {
 
 //input money
 document.getElementById('donation1').addEventListener('click',function(){
-    const inputMoney1 = document.getElementById('input1');
-    const inputMoney1Value = inputMoney1.value;
-    const inputMoney1ValueParseInt = parseInt(inputMoney1Value);
-    if(inputMoney1ValueParseInt <1 || isNaN(inputMoney1ValueParseInt)){
+    
+    const myDonatedAmount = getInputFieldValueById('input1');
+
+    if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
         alert('Enter a valid Number');
-        inputMoney1.value = '';
+        return;
     }
     else{
-        const myAmmount = document.getElementById('my-ammount');
-        const myAmmountInnerText = myAmmount.innerText;
-        const myAmmountInnerTextParseInt = parseInt(myAmmountInnerText)
-    
-        const donationAmount = document.getElementById('donation-ammount');
-        const donationAmountInnerText = donationAmount.innerText;
-        const donationAmountInnerTextParseInt = parseInt(donationAmountInnerText);
-    
-        const totalDonationAmount =  donationAmountInnerTextParseInt + inputMoney1ValueParseInt ;
-        donationAmount.innerText = totalDonationAmount;
-    
-        const removeMyDonationAmountFromMyAmmount = myAmmountInnerTextParseInt - inputMoney1ValueParseInt;
-        myAmmount.innerText = removeMyDonationAmountFromMyAmmount;
-    
-        inputMoney1.value = '';
+       
+        const myMoney = getTextFieldValueById('my-ammount');
+        const allDonation = getTextFieldValueById('donation-ammount');
+        updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount')
+        updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
+        clearInputField('input1');
     }
 
   
