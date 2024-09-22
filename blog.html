@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class=" max-w-7xl mx-auto flex flex-col gap-5">
+    <h1 class="text-center font-extrabold text-3xl">Important FAQ</h1>
+    <div class="collapse bg-base-200">
+        <input type="radio" name="my-accordion-1" checked="checked" />
+        <div class="collapse-title text-xl font-medium">What is the Document Object Model(DOM)?</div>
+        <div class="collapse-content">
+            <p>The Document Object Model (DOM) is the data representation of the objects that comprise the structure and
+                content of a document on the web. This guide will introduce the DOM, look at how the DOM represents an
+                HTML document in memory and how to use APIs to create web content and applications.</p>
+        </div>
+    </div>
+    <div class="collapse bg-base-200">
+        <input type="radio" name="my-accordion-1" />
+        <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+        <div class="collapse-content">
+            <p> To select an element from the DOM (Document Object Model) in JavaScript, you use the
+                document.getElementById() method to access an element by its unique ID, which is the most common way to
+                target a specific element; you can also use methods like getElementsByClassName() to select elements
+                with a specific class name or querySelectorAll() to select elements using a CSS selector that allows for
+                more complex targeting based on tags, attributes, and class names.
+                <br> <br>
+                Key points about selecting DOM elements:
+                <br>
+                <strong>getElementById():</strong>
+                <br>
+                Syntax: document.getElementById("elementId")
+                <br>
+                Returns a single element with the matching ID.
+                <br><br>
+                <strong>getElementsByClassName():</strong>
+                <br>
+                Syntax: document.getElementsByClassName("className")
+                <br>
+                Returns a collection of all elements with the matching class name.
+                <br><br>
+                <strong>querySelectorAll():</strong>
+                <br>
+                Syntax: document.querySelectorAll("cssSelector")
+                <br>
+                Returns a NodeList containing all elements matching the provided CSS selector.
+            </p>
+
+        </div>
+    </div>
+    <div class="collapse bg-base-200">
+        <input type="radio" name="my-accordion-1" />
+        <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+        <div class="collapse-content">
+            <p> In the context of the DOM (Document Object Model), "event delegation" is a technique where you attach a
+                single event listener to a parent element, allowing it to handle events triggered on any of its child
+                elements. This effectively "delegates" event handling to the parent, which is particularly useful for
+                improving performance when dealing with large or dynamically added lists of elements because you only
+                need to manage one event listener instead of many on individual children. It leverages the "event
+                bubbling" behavior of the DOM, where events propagate up the DOM tree from the element where they
+                originated.
+                <br> <br>
+                Key points about event delegation:
+                <br>
+                <strong>Efficiency:</strong>
+                <br> 
+                By attaching a single listener to a parent element, you reduce the number of event listeners needed,
+                which can significantly improve performance, especially when dealing with large lists of dynamically
+                generated elements.
+                <br><br>
+                <strong> Dynamic content support:</strong>
+                <br>
+                When new child elements are added to the DOM, you don't need to re-attach event listeners to each new
+                element as the parent listener will already handle events from them.
+                <br><br>
+                <strong>Simplified code:</strong>
+                <br>
+                You only need to write the event handling logic once in the parent element's listener, making your code
+                cleaner and more maintainable.
+                <br><br>
+                <strong>Example:</strong>
+                <br>
+                Imagine a list with many list items (<code>&lt;li&gt;</code>) where you want to perform an action when a list item is
+                clicked. Instead of attaching a click event listener to each individual
+                <code>&lt;li&gt;</code>, you can attach a single click event listener to the parent <code>&lt;ul&gt;</code> element and then check within the
+                event handler if the clicked element is an <code>&lt;li&gt;</code>.
+            </p>
+            
+
+        </div>
+    </div>
+    <div class="collapse bg-base-200">
+        <input type="radio" name="my-accordion-1" />
+        <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+        <div class="collapse-content">
+            <p> To manipulate an element's attributes and styles using the DOM in JavaScript, you first need to
+                select the desired element using methods like <code>getElementById</code>, <code>querySelector</code>, or
+                <code>getElementsByClassName</code>. After selecting the element, you can access its properties to directly modify
+                attribute values or use the <code>style</code> property to change its CSS styles.
+                <br><br>
+                <strong>Key steps:</strong>
+                <br><br>
+                <strong>Select the element:</strong>
+                <br>
+                <code>const element = document.getElementById("myElementId");</code>
+                <br>
+                <code>const element = document.querySelector(".myClass");</code>
+                <br> <br>
+                <strong>Modify attributes:</strong>
+                <br>
+                Get attribute: <code>let attributeValue = element.getAttribute("attributeName");</code>
+                <br>
+                Set attribute: <code>element.setAttribute("attributeName", "newValue");</code>
+                <br>
+                Remove attribute: <code>element.removeAttribute("attributeName");</code>
+                <br> <br>
+                <strong>Modify styles:</strong>
+                <br>
+                Access style object: <code>element.style</code>
+                <br>
+                Set style property: <code>element.style.backgroundColor = "red";</code>
+            </p>
+            
+
+        </div>
+    </div>
+  
+</body>
+
+</html>
