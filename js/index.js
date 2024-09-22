@@ -21,6 +21,7 @@ button2.addEventListener('click', function() {
     button2.classList.add('bg-green-300'); 
 });
 
+
 //input money
 document.getElementById('donation1').addEventListener('click',function(){
     
@@ -38,27 +39,42 @@ document.getElementById('donation1').addEventListener('click',function(){
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input1');
     }
-
-  
 })
-// document.getElementById('donation1').addEventListener('click',function(){
-//     const inputMoney1 = document.getElementById('input1');
-//     const inputMoney1Value = inputMoney1.value;
-//     const inputMoney1ValueParseInt = parseInt(inputMoney1Value);
+//input money2
+document.getElementById('donation2').addEventListener('click',function(){
+    
+    const myDonatedAmount = getInputFieldValueById('input2');
 
-//     const myAmmount = document.getElementById('my-ammount');
-//     const myAmmountInnerText = myAmmount.innerText;
-//     const myAmmountInnerTextParseInt = parseInt(myAmmountInnerText)
+    if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
+        alert('Enter a valid Number');
+        return;
+    }
+    else{
+       
+        const myMoney = getTextFieldValueById('my-ammount');
+        const allDonation = getTextFieldValueById('donation-ammount2');
+        updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount2')
+        updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
+        clearInputField('input2');
+    }
+})
+//input money3
+document.getElementById('donation3').addEventListener('click',function(){
+    
+    const myDonatedAmount = getInputFieldValueById('input3');
 
-//     const donationAmount = document.getElementById('donation-ammount');
-//     const donationAmountInnerText = donationAmount.innerText;
-//     const donationAmountInnerTextParseInt = parseInt(donationAmountInnerText);
+    if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
+        alert('Enter a valid Number');
+        return;
+    }
+    else{
+       
+        const myMoney = getTextFieldValueById('my-ammount');
+        const allDonation = getTextFieldValueById('donation-ammount3');
+        updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount3')
+        updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
+        clearInputField('input3');
+    }
+})
 
-//     const totalDonationAmount =  donationAmountInnerTextParseInt + inputMoney1ValueParseInt ;
-//     donationAmount.innerText = totalDonationAmount;
-
-//     const removeMyDonationAmountFromMyAmmount = myAmmountInnerTextParseInt - inputMoney1ValueParseInt;
-//     myAmmount.innerText = removeMyDonationAmountFromMyAmmount;
-
-//     inputMoney1.value = '';
-// })
+//history
