@@ -14,17 +14,21 @@ function resetActiveButtons() {
 button1.addEventListener('click', function() {
     resetActiveButtons(); 
     button1.classList.add('bg-green-300'); 
+    document.getElementById('history-section').classList.add('hidden'); 
+    document.getElementById('main-card-section').classList.remove('hidden'); 
 });
 
 button2.addEventListener('click', function() {
     resetActiveButtons(); 
     button2.classList.add('bg-green-300'); 
+    document.getElementById('main-card-section').classList.add('hidden'); 
+    document.getElementById('history-section').classList.remove('hidden'); 
 });
 
 
 //input money
-document.getElementById('donation1').addEventListener('click',function(){
-    
+document.getElementById('donation1').addEventListener('click',function(event){
+    event.preventDefault();
     const myDonatedAmount = getInputFieldValueById('input1');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
@@ -41,8 +45,8 @@ document.getElementById('donation1').addEventListener('click',function(){
     }
 })
 //input money2
-document.getElementById('donation2').addEventListener('click',function(){
-    
+document.getElementById('donation2').addEventListener('click',function(event){
+    event.preventDefault();
     const myDonatedAmount = getInputFieldValueById('input2');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
@@ -59,8 +63,8 @@ document.getElementById('donation2').addEventListener('click',function(){
     }
 })
 //input money3
-document.getElementById('donation3').addEventListener('click',function(){
-    
+document.getElementById('donation3').addEventListener('click',function(event){
+    event.preventDefault();
     const myDonatedAmount = getInputFieldValueById('input3');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
@@ -78,3 +82,12 @@ document.getElementById('donation3').addEventListener('click',function(){
 })
 
 //history
+
+document.getElementById('button2').addEventListener('click', function() {
+
+    document.getElementById('taka1').innerText = document.getElementById('donation-ammount').innerText;
+    document.getElementById('taka2').innerText = document.getElementById('donation-ammount2').innerText;
+    document.getElementById('taka3').innerText = document.getElementById('donation-ammount3').innerText;
+    
+});
+
