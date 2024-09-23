@@ -32,7 +32,7 @@ document.getElementById('donation1').addEventListener('click',function(event){
     const myDonatedAmount = getInputFieldValueById('input1');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
-        alert('Enter a valid Number');
+        document.getElementById('my-modal').checked = true;
         return;
     }
     else{
@@ -42,6 +42,8 @@ document.getElementById('donation1').addEventListener('click',function(event){
         updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount')
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input1');
+        document.getElementById('thank-you-modal').checked = true;
+
     }
 })
 //input money2
@@ -50,7 +52,7 @@ document.getElementById('donation2').addEventListener('click',function(event){
     const myDonatedAmount = getInputFieldValueById('input2');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
-        alert('Enter a valid Number');
+        document.getElementById('my-modal').checked = true;
         return;
     }
     else{
@@ -60,6 +62,8 @@ document.getElementById('donation2').addEventListener('click',function(event){
         updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount2')
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input2');
+        document.getElementById('thank-you-modal').checked = true;
+
     }
 })
 //input money3
@@ -68,7 +72,7 @@ document.getElementById('donation3').addEventListener('click',function(event){
     const myDonatedAmount = getInputFieldValueById('input3');
 
     if(myDonatedAmount <1 || isNaN(myDonatedAmount)){
-        alert('Enter a valid Number');
+        document.getElementById('my-modal').checked = true;
         return;
     }
     else{
@@ -78,6 +82,8 @@ document.getElementById('donation3').addEventListener('click',function(event){
         updateTotalDonationAmount(myDonatedAmount ,allDonation , 'donation-ammount3')
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input3');
+        document.getElementById('thank-you-modal').checked = true;
+
     }
 })
 
