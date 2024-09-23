@@ -43,16 +43,16 @@ function updateTotalDonationAmount2(amount1, amount2, elementId) {
 
 document.getElementById('input1').value = '';
 
-// function removeTextFromInput(elementId){
-//     document.getElementById(elementId).value = '';
-// }
 
-// function clearInputField(inputId) {
-//     document.getElementById(inputId).value = '';
-// }
 
 function clearInputField(inputId) {
     const inputField = document.getElementById(inputId);
     inputField.value = '';
-    return inputField.value; // Returns the cleared value (empty string)
+    return inputField.value;
+}
+
+//time
+function updateDonationTime(donationTimeSpanId) {
+    const now = new Date().toLocaleString();
+    document.getElementById(donationTimeSpanId).textContent = now;
 }

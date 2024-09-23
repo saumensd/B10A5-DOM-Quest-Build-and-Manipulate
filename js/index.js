@@ -43,6 +43,7 @@ document.getElementById('donation1').addEventListener('click',function(event){
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input1');
         document.getElementById('thank-you-modal').checked = true;
+        updateDonationTime('live-time'); 
 
     }
 })
@@ -63,6 +64,7 @@ document.getElementById('donation2').addEventListener('click',function(event){
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input2');
         document.getElementById('thank-you-modal').checked = true;
+        updateDonationTime('live-time2');
 
     }
 })
@@ -83,6 +85,7 @@ document.getElementById('donation3').addEventListener('click',function(event){
         updateTotalDonationAmount2(myMoney ,  myDonatedAmount , 'my-ammount')
         clearInputField('input3');
         document.getElementById('thank-you-modal').checked = true;
+        updateDonationTime('live-time3'); 
 
     }
 })
@@ -96,4 +99,6 @@ document.getElementById('button2').addEventListener('click', function() {
     document.getElementById('taka3').innerText = document.getElementById('donation-ammount3').innerText;
     
 });
+
+
 
